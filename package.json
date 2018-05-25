@@ -1,0 +1,26 @@
+{
+  "name": "Project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madeloux/Project2.git"
+  },
+  "keywords": [],
+  "author": "Madeleine Filloux <mfilloux@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madeloux/Project2/issues"
+  },
+  "homepage": "https://github.com/madeloux/Project2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.9"
+  }
+}
