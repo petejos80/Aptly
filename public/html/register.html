@@ -20,7 +20,7 @@
                     <h2 class="text-center">Register</h2>
                     <div class="input-field col s6">
 
-                        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                        <input id="first_name" type="text" class="validate">
                         <label for="first_name">First Name</label>
                     </div>
                     <div class="input-field col s6">
@@ -30,20 +30,20 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                        <label for="disabled">Disabled</label>
+                        <input id="zipcode" type="number" class="validate">
+                        <label for="zipcode">Zip Code</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email (used as username for login)</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="password" type="password" class="validate">
                         <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
@@ -66,13 +66,13 @@
                             <p>
                                 <label>
                                     <input type="checkbox" />
-                                    <span>Sales</span>
+                                    <span>Community Room</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
                                     <input type="checkbox" />
-                                    <span>Sales</span>
+                                    <span>Misc</span>
                                 </label>
                             </p>
                         </form>
@@ -84,25 +84,25 @@
                             <p>
                                 <label>
                                     <input type="checkbox" />
-                                    <span>Sell/Buy</span>
+                                    <span>Music</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
                                     <input type="checkbox" />
-                                    <span>Lost/Found</span>
+                                    <span>Arts</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
                                     <input type="checkbox" />
-                                    <span>Sales</span>
+                                    <span>Sports</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
                                     <input type="checkbox" />
-                                    <span>Sales</span>
+                                    <span>Misc</span>
                                 </label>
                             </p>
                         </form>
@@ -113,8 +113,8 @@
         </div>
 
         <!-- Switch -->
-        <h4>Notification</h4>
         <div class="switch">
+            <span>Notification</span>
             <label>
                 Off
                 <input type="checkbox">
