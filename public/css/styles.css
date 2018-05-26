@@ -20,7 +20,9 @@ nav .brand-logo {
     color: #1a237e;
 }
 
-
+.overflow-auto {
+    overflow: auto;
+}
 
 .main {
     background-image: url("../images/background.jpg");
