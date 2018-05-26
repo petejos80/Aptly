@@ -1,0 +1,43 @@
+html, body {
+    height: 100%;
+}
+
+nav .brand-logo {
+    margin-left: 30px;
+    font-size: 50px;
+}
+
+.brand-logo img {
+    height: 54px;
+    padding-top: 10px;
+}
+
+.dropdown-content {
+    top: 64px !important;
+}
+
+.dropdown-content li>a {
+    color: #1a237e;
+}
+
+
+
+.main {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%
+}
+
+.profile {
+    padding-top: 100px;
+}
+
+h4 {
+    color: white;
+}
+
+#register{
+    margin-right: 20px;
+}
+
