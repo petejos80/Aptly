@@ -38,8 +38,8 @@ module.exports = function (app) {
         res.send("This is the route for NewUser Dashboard")
     })
 
-    app.get("/post", function (req, res){
-        res.send("This is the route for making a new Post")
+    app.get("/posts", function (req, res){
+        res.render("posts")
     })
 
     app.get("/login", function (req, res) {
