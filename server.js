@@ -7,6 +7,8 @@ var env = require('dotenv').load();
 var models = require("./models");
 var exphbs = require('express-handlebars')
 var authRoute = require('./app/routes/auth.js')(app);
+var authRoute = require('./app/routes/auth.js')(app,passport);
+
  
 //Sync Database
 models.sequelize.sync().then(function() {
@@ -18,6 +20,9 @@ models.sequelize.sync().then(function() {
     console.log(err, "Something went wrong with the Database Update!")
  
 });
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, models.user);
 
 // Use bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
