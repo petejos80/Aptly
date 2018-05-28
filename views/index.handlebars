@@ -1,33 +1,95 @@
 {{> navbar}}
 
-<div class="row main">
-    <div class="row profile">
-        <p>
-            <h4 class="col offset-m5">My Profile</h4>
-        </p>
-        <p>Name:
-            <span id="name">John</span>
-        </p>
-        <p>Name:
-            <span id="name">John</span>
-        </p>
-        <p>Name:
-            <span id="name">John</span>
-        </p>
-        <p>Name:
-            <span id="name">John</span>
-        </p>
-        <br>
-    </div>
+<div class="row offset-m6">
+    <h4 class="col s12 offset-m5">My Profile</h4>
+</div>
+
+<div id="profile"></div>
+
+<div class="container">
     <div class="row">
-        <div class="col offset-m5">
-            <a href="/register">
-                <button type="submit" id="register" tabindex="2" class="btn btn-lg orange darken-2 waves-effect text-center">Posts</button>
-            </a>
-            <a href="/login">
-                <button type="submit" id="login" tabindex="2" class="btn btn-lg orange darken-2 waves-effect text-center">Event</button>
-            </a>
+        <div class="col s12 m8 20 offset-m2 offset-l0">
+            <div class="row">
+                <div class="card-panel grey lighten-5 overflow-auto">
+                    <div class="row">
+                        <div class="col s6">
+                            <ul>
+                                <li>
+                                    <img src="/images/profile.jpg" class="circle">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col s6">
+                            <ul>
+                                <li>Name: <span id="fistName">John</span><span id="lastName"> Wilson</span></li>
+                                <li>User Name: <span id="userName">John123</span></li>
+                                <li>Unit Number: <span id="userName">123</span></li>
+                                <li>Email: <span id="email">johnwilson@gmail.com</span></li>
+                                <li>Lease End: <span id="leaseEnd">12/31/2018</span></li>
+                                <li>Phone: <span id="phone">(612) 111-2222</span></li>
+                                <li>Interest: <span id="interest">Music</span></li>
+                            </ul>
+                        </div>
+                        <div class="center-align">
+                            <button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="profile-edit-button">
+                                <i class="material-icons right">edit</i>Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="center-align">
+                                <p>
+                                    <h5>Posts</h5>
+                                    <a href="/posts">
+                                        <button type="submit" id="posts" tabindex="2" class="btn btn-lg orange darken-2 waves-effect text-center">More</button>
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="carousel carousel-slider">
+                                <a class="carousel-item" href="#one!">
+                                    <img src="/images/background.jpg">
+                                </a>
+                                <a class="carousel-item" href="#two!">
+                                    <img src="/images/background1.jpg">
+                                </a>
+                                <a class="carousel-item" href="#three!">
+                                    <img src="/images/background.jpg">
+                                </a>
+                                <a class="carousel-item" href="#four!">
+                                    <img src="/images/background1.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="center-align">
+                                <p>
+                                    <h5>Events</h5>
+                                    <a href="/events">
+                                        <button type="submit" id="events" tabindex="2" class="btn btn-lg orange darken-2 waves-effect text-center">More</button>
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="carousel carousel-slider">
+                                <a class="carousel-item" href="#one!">
+                                    <img src="/images/background.jpg">
+                                </a>
+                                <a class="carousel-item" href="#two!">
+                                    <img src="/images/background1.jpg">
+                                </a>
+                                <a class="carousel-item" href="#three!">
+                                    <img src="/images/background.jpg">
+                                </a>
+                                <a class="carousel-item" href="#four!">
+                                    <img src="/images/background1.jpg">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+</div>
 </div>
