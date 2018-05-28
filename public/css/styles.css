@@ -1,4 +1,4 @@
-html, body {
+htmls {
     height: 100%;
     color: #263238;
 }
@@ -17,11 +17,15 @@ nav .brand-logo {
     padding-top: 10px;
 }
 
+.main {
+    margin-top: 40px;
+}
+
 .overflow-auto {
     overflow: auto;
 }
 
-.main {
+.background {
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,15 +33,12 @@ nav .brand-logo {
 }
 
 .profile {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 h4 {
     color:#ffffff;
-}
-
-#register{
-    margin-right: 20px;
+    padding-top: 30px;
 }
 
 .card-panel {
@@ -67,3 +68,8 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
     font-family: 'Niconne', cursive;
     font-size: 1.75rem;
 }
+
+nav-wrapper {
+    background-color:  #ef6c00;
+}
+
