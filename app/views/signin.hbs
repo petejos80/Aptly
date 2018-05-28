@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
- 
+{{!--  
 <head>
     <title></title>
 </head>
@@ -16,4 +16,40 @@
  
 </body>
  
+</html> --}}
+
+<div class="main">
+    <div class="container center-align">
+        <div class="row">
+            <div class="col s12">
+                <h1><span class="hide-on-small-only">Welcome to </span>Name</h1>
+                <p class="tagline">This is where our spiffy tagline can go.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m8 l6 offset-m2 offset-l3">
+                <div class="row">
+                    <div class="card-panel overflow-auto">
+                        <h2>Log In</h2>
+                        <form id="signin" name="signin" method="post" action="signin">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix left-align">person</i>
+                                <input id="email-input" type="text" name="email">
+                                <label for="email-input">Email</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix left-align">lock</i>
+                                <input id="password-input" type="password" name="password">
+                                <label for="password-input">Password</label>
+                            </div>
+                            <button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="sign-in-button">Sign In</button>
+                        </form>
+                        <p>Not a member yet? <a href="/signup">Register now!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </html>
