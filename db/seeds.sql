@@ -1,2 +1,2 @@
--- DROP DATABASE IF EXISTS apartmentDB;
-CREATE DATABASE apartmentDB;
+-- DROP DATABASE IF EXISTS apartmentdb;
+CREATE DATABASE apartmentdb;
