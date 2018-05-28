@@ -42,6 +42,10 @@ module.exports = function (app) {
         res.render("posts")
     })
 
+    app.get("/posts/new", function (req, res){
+        res.render("posts-form")
+    })
+
     app.get("/login", function (req, res) {
         res.render("login")
     })

@@ -1,0 +1,49 @@
+{{> navbar}}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            {{#if edit}}
+            <h2>Edit Post</h2>
+            {{else}}
+            <h2>New Post</h2>
+            {{/if}}
+        </div>
+        <div class="row">
+            <form>
+                <div class="input-field col s12 m7">
+                    <input id="post-title-input" type="text">
+                    <label for="post-title-input">Title</label>
+                </div>
+                <div class="col s12 m5">
+                    <a id="post-category-dropdown-button" class="dropdown-trigger btn-flat waves-effect waves-orange" href="#" data-target="post-category-dropdown">
+                        <i class="material-icons right">arrow_drop_down</i>Post Category</a>
+                    <ul id="post-category-dropdown" class="dropdown-content">
+                        <li>
+                            <a href="#" class="post-category-dropdown-option orange-text">
+                                <i class="material-icons">attach_money</i>For Sale</a>
+                        </li>
+                        <li>
+                            <a href="#" class="post-category-dropdown-option orange-text">
+                                <i class="material-icons">announcement</i>Announcement</a>
+                        </li>
+                        <li>
+                            <a href="#" class="post-category-dropdown-option orange-text">
+                                <i class="material-icons">help</i>Question</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="input-field col s12">
+                    <textarea id="post-body-input" class="materialize-textarea"></textarea>
+                    <label for="post-body-input">Message</label>
+                    <br>
+                    <br> 
+                    {{#if edit}}
+                        <button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="post-button">Update Post</button>
+                    {{else}}
+                        <button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="post-button">Submit Post</button>
+                    {{/if}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
