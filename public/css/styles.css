@@ -28,16 +28,12 @@ nav .brand-logo {
     height: 100%;
 }
 
-#register-form {
-    opacity: 0.8;
-}
-
 .profile {
     padding-top: 100px;
 }
 
 h4 {
-    color: white;
+    color:#ffffff;
 }
 
 #register{

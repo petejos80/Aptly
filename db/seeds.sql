@@ -1,0 +1,1 @@
+INSERT INTO users(userName, userPsswd, firstName, lastName, unitNumber, email, createdAt) VALUES ("jj4567", "password1", "JR", "Brown", "222", "jcr48@gmail.com", NOW());
