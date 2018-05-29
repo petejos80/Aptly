@@ -21,12 +21,14 @@ app.use(session({
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
- 
+app.use(express.static('public'))
  
 // For Handlebars
-app.set('views', './app/views')
+// app.set('views', './app/views')
 app.engine('hbs', exphbs({
-    extname: '.hbs'
+    extname: '.hbs', 
+    defaultLayout: 'main', 
+    partialsPath: 'partials'
 }));
 app.set('view engine', '.hbs');
  
@@ -34,7 +36,7 @@ app.set('view engine', '.hbs');
  
 app.get('/', function(req, res) {
  
-    res.send('Welcome to Passport with Sequelize');
+    res.render('dashboard');
  
 });
  
