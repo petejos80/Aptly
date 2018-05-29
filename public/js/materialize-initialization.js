@@ -3,4 +3,7 @@ $(document).ready(function () {
     $(".dropdown-trigger").dropdown({
         coverTrigger: false,
     });
+    $(".carousel.carousel-slider").carousel({
+        fullWidth: true
+    });
 });
