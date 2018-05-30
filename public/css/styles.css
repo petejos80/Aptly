@@ -1,14 +1,15 @@
-html, body {
+html,
+body {
     height: 100%;
     color: #263238;
 }
 
 nav {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 nav .brand-logo {
-    margin-left: 30px;
+    margin-left: 10px;
     font-size: 50px;
 }
 
@@ -33,15 +34,35 @@ nav .brand-logo {
 }
 
 .profile {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 h4 {
-    color: white;
+    color:#ffffff;
+    padding-top: 30px;
 }
 
-#register{
-    margin-right: 20px;
+.card-panel {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+h2 {
+    font-size: 2.56rem;
+    margin-top: 0;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #ef6c00;
+    -webkit-box-shadow: 0 1px 0 0 #ef6c00;
+    box-shadow: 0 1px 0 0 #ef6c00;
+}
+
+.input-field .prefix.active {
+    color: #ef6c00;
+}
+
+input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-default):focus:not([readonly])+label, input[type=password]:not(.browser-default):focus:not([readonly])+label, input[type=email]:not(.browser-default):focus:not([readonly])+label, input[type=url]:not(.browser-default):focus:not([readonly])+label, input[type=time]:not(.browser-default):focus:not([readonly])+label, input[type=date]:not(.browser-default):focus:not([readonly])+label, input[type=datetime]:not(.browser-default):focus:not([readonly])+label, input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label, input[type=tel]:not(.browser-default):focus:not([readonly])+label, input[type=number]:not(.browser-default):focus:not([readonly])+label, input[type=search]:not(.browser-default):focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+    color: #ef6c00;
 }
 
 .card-panel {
