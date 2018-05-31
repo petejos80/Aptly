@@ -12,15 +12,9 @@ exports.signin = function(req, res) {
  
 }
 
-exports.dashboard = function(req, res) {
+exports.index = function(req, res) {
  
-    res.render('dashboard');
- 
-}
-
-exports.posts = function(req, res) {
- 
-    res.render('posts');
+    res.render('index');
  
 }
 
