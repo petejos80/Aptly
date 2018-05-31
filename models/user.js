@@ -1,110 +1,110 @@
+Sequelize = require("sequelize")
 module.exports = function (sequelize, DataTypes) {
     //User Model used to access User Table on MySql database
 
-        let User = sequelize.define("User", {
-            userId:
+    let User = sequelize.define("User", {
+        userId:
             {
                 type: DataTypes.BIGINT,
-                allowNull: false,
+                allowNull: true,
+                primaryKey: true, 
+                autoIncrement: true, 
                 validation: {
-                        is: /^[a-z]+$/i,          
-                } 
+                    is: /^[a-z]+$/i 
+                }         
             },  
-            userName:
+        userName:
             {
-               type:  DataTypes.STRING, 
-               allowNull: false,
-               validation:  {
-                   is: /^[a-z]+$/i,          
-               }
-            },
-            userPsswd:{
-                type: DataTypes.STRING,
+                type:  DataTypes.STRING, 
                 allowNull: false,
-                validation: {
-                    
-                }  
+                validation:  {
+                    is: /^[a-z]+$/i       
+                }
+            },
+        userPsswd:
+            {
+                type: DataTypes.STRING,
+                allowNull: false
             }, 
-            firstName:
+        firstName:
             {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validation:  {
-                    is: /^[a-z]+$/i,          
+                    is: /^[a-z]+$/i         
                 } 
-             }, 
-            lastName:
+            }, 
+        lastName:
             {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validation: {
-                   is: /^[a-z]+$/i,           
+                    is: /^[a-z]+$/i        
                 } 
-             }, 
-            unitNumber:
+            } ,
+        unitNumber:
             {
                 type: DataTypes.STRING,
                 allowNull: false, 
                 validation: {
-                    is: /^[a-z]+$/i,          
+                    is: /^[a-z]+$/i          
                 }
             }, 
-            email:
+        email:
             {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validation: {
-                     isEmail: true, is: /^[a-z]+$/i,          
-                }         
-             }, 
-            leaseEnd:
+                    isEmail: true, 
+                    is: /^[a-z]+$/i        
+                },        
+            }, 
+        leaseEnd:
             {
                 type: DataTypes.STRING,
-                allowNull: false, 
+                allowNull: true, 
                 validation:{
-                    isDate: true, 
+                    isDate: true
                 } 
-             },  
-            phone:
+            },  
+        phone:
             {
                 type: DataTypes.STRING,
-                allowNull: false, 
+                allowNull: true,
+                defaultValue: DataTypes.UUIDV1, 
                 validation: {
-                    isNumeric: true,         
+                    isNumeric: true        
                 }
-             }, 
-            interest:
+            }, 
+        interest:
             {
                 type:  DataTypes.STRING,
-                allowNull: false, 
+                allowNull: true, 
                 validation: {
-                    notEmpty: true,
+                    notEmpty: true
                 }
-             }, 
-            Address:
+            }, 
+        address:
             {
                 type: DataTypes.STRING,
-                allowNull: false, 
+                allowNull: true, 
                 validation: {
-                    is: /^[a-z]+$/i,          
+                    is: /^[a-z]+$/i         
                 }
-             },  
-            geoLocation:
+            },  
+        geoLocation:
             {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: true,
                 validation: {
-                    isDecimal: true,
+                    isDecimal: true
                 } 
-             }, 
-            cookies:
+            }, 
+        cookies:
             {
                 type: DataTypes.STRING,
-                allowNull: false,
-                validation: {
-                    
-                } 
-             }, 
+                allowNull: true
+            }
     });
-return User
+    return User
 }
