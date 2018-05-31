@@ -1,2 +1,0 @@
--- DROP DATABASE IF EXISTS apartmentDB;
-CREATE DATABASE apartmentDB;

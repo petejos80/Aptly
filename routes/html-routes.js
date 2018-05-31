@@ -22,7 +22,7 @@ module.exports = function (app) {
         res.render("register")
     })
     
-    app.get("/event", function (req, res ) {
+    app.get("/events", function (req, res ) {
         res.send("This is the route to Create an Event")
     })
 

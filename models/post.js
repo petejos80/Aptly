@@ -6,7 +6,7 @@ module.exports = function (sequelize, DataTypes) {
            type:  DataTypes.STRING, 
            allowNull: false,
            validate: {
-               is: /^[a-z]+$/i,
+               is: /^[a-z]+$/i
            }
        },
        title: 
@@ -14,19 +14,20 @@ module.exports = function (sequelize, DataTypes) {
            type: DataTypes.STRING,
            allowNull: false, 
            validate: {
-               is: ["^[a-z]+$",'i'],
-           },
+               is: ["^[a-z]+$",'i']
+           }
+        },
        body: 
        {
            type:  DataTypes.STRING,
-           allowNull: false,
+           allowNull: false
        },
        author:
        {
-           type: DataTypes.STRING,
+           type: DataTypes.STRING
        } 
        //Data and time should already be store on table &&ForeignKey will reference primary id from UserTable
-       } 
+       
    })
     return Post
     }
