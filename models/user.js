@@ -163,5 +163,6 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: true
             }
     });
+    console.log("user is ", User)
     return User
 }
