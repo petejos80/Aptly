@@ -37,6 +37,10 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING,
             allowNull: false
         },
+
+        height: {
+            type: Sequelize.TEXT
+        },
  
         last_login: {
             type: Sequelize.DATE
