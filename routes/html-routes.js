@@ -35,10 +35,6 @@ module.exports = function (app) {
         res.send("This is the route that will load top five events")
     })
 
-    app.get("/userDashboard", function (req, res){
-        res.send("This is the route for NewUser Dashboard")
-    })
-
     app.get("/posts", function (req, res){
         db.Post.findAll({
             raw: true,

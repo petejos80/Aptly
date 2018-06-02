@@ -129,8 +129,8 @@ module.exports = function(passport, user) {
  
     ));
 
-    //LOCAL SIGNIN
-passport.use('local-signin', new LocalStrategy(
+    //LOCAL LOGIN
+passport.use('local-login', new LocalStrategy(
  
     {
  
@@ -187,7 +187,7 @@ passport.use('local-signin', new LocalStrategy(
             console.log("Error:", err);
  
             return done(null, false, {
-                message: 'Something went wrong with your Signin'
+                message: 'Something went wrong with your Login'
             });
  
         });
