@@ -3,7 +3,7 @@ $(".post-category-dropdown-option").on("click", function () {
     $("#post-category-dropdown-button").html(`<i class="material-icons right">arrow_drop_down</i>${selection}`);
 });
 
-$("#post-button").on("click", function (e) {
+$("#new-post-button").on("click", function (e) {
     e.preventDefault();
     const title = $("#post-title-input").val().trim();
     const body = $("#post-body-input").val().trim();
@@ -16,11 +16,10 @@ $("#post-button").on("click", function (e) {
         body,
         category,
     }
-    // CALL POST ROUTE TO POSTS HERE
     $.post("/api/posts/new", newPost, function(data) {
         console.log(data);
     }).then( function(res) {
-        window.location.assign('/posts');
+        window.location.assign("/posts")
     });
 });
 
@@ -44,6 +43,14 @@ $(".favorite-button").on("click", function () {
     }
     localStorage.setItem("favPosts", JSON.stringify(favsArray));
 });
+
+// $(".edit-button").on("click", function() {
+//     let editId = $(this).data("id");
+//     console.log(editId);
+//     $.get(`/posts/edit/${editId}`, function(data) {
+//         console.log(data);
+//     });
+// })
 
 $(() => {
     let favsArray;
