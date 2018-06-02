@@ -9,11 +9,12 @@ module.exports = function(app){
 
 //Route for all post
 app.get("/api/posts", function (req, res) {
-       db.User.findAll({}).then(function(result){
+       db.Post.findAll({}).then(function(result){
             res.json(result);
        })
 
     });
+
 
 
 // get all post with a specific category
@@ -23,7 +24,16 @@ app.get("/api/posts/category:category", function (req, res){
 
 //update entry with a specific user id
 app.put("/api/update/:id", function(req, res){
-
+    db.Post.findOne({
+        where: {
+          author: "Tiesto"  
+        }
+    }).then(function(Post) {
+        Post.updateAttributes({
+            title: "I did It!"
+        })
+        res.redirect("/")
+    })
 })
 
 //creates a new entry 
