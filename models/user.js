@@ -1,5 +1,7 @@
 module.exports = function(sequelize, Sequelize) {
  
+    var DataTypes = require('sequelize/lib/data-types');
+
     var User = sequelize.define('user', {
  
         id: {
@@ -21,25 +23,72 @@ module.exports = function(sequelize, Sequelize) {
         username: {
             type: Sequelize.TEXT
         },
- 
-        about: {
-            type: Sequelize.TEXT
-        },
- 
+
         email: {
             type: Sequelize.STRING,
             validate: {
                 isEmail: true
             }
         },
+
+        leaseEnd:
+        {
+            type: DataTypes.STRING,
+            allowNull: true, 
+            validation:{
+                isDate: true
+            } 
+        },
  
         password: {
             type: Sequelize.STRING,
             allowNull: false
         },
+        
+        unitnumber: {
+            type: DataTypes.STRING,
+            allowNull: false, 
+            validation: {
+                is: /^[a-z]+$/i          
+            }
+        }, 
 
-        height: {
-            type: Sequelize.TEXT
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            defaultValue: DataTypes.UUIDV1, 
+            validation: {
+                isNumeric: true        
+            }
+        }, 
+        
+        interest: {
+            type:  DataTypes.STRING,
+            allowNull: true, 
+            validation: {
+                notEmpty: true
+            }
+        }, 
+    
+        address: {
+            type: DataTypes.STRING,
+            allowNull: true, 
+            validation: {
+                is: /^[a-z]+$/i         
+            }
+        },  
+    
+        geoLocation: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validation: {
+                isDecimal: true
+            } 
+        }, 
+    
+        cookies: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
  
         last_login: {

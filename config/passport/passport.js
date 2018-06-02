@@ -93,10 +93,18 @@ module.exports = function(passport, user) {
  
                             lastname: req.body.lastname,
 
-                            about: req.body.about,
+                            username: req.body.username,
 
-                            height: req.body.height
- 
+                            leaseend: req.body.leaseend,
+
+                            unitnumber: req.body.unitnumber,
+
+                            phone: req.body.phone,
+
+                            interest: req.body.interest,
+
+                            address: req.body.address
+
                         };
  
                     User.create(data).then(function(newUser, created) {
