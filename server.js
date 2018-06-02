@@ -25,18 +25,17 @@ app.use(express.static('public'))
  
 // For Handlebars
 // app.set('views', './app/views')
-app.engine('hbs', exphbs({
-    extname: '.hbs', 
+app.engine('handlebars', exphbs({
     defaultLayout: 'main', 
     partialsPath: 'partials'
 }));
-app.set('view engine', '.hbs');
+app.set('view engine', '.handlebars');
  
  
  
 app.get('/', function(req, res) {
  
-    res.render('dashboard');
+    res.render('login');
  
 });
  
@@ -44,7 +43,7 @@ app.get('/', function(req, res) {
 var models = require("./models");
  
 //Routes
-var authRoute = require('./app/routes/auth.js')(app,passport);
+var authRoute = require('./routes/auth.js')(app,passport);
  
  
 //Load passport strategies

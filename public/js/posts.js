@@ -11,7 +11,17 @@ $("#post-button").on("click", function (e) {
     console.log(`Post title: ${title}`);
     console.log(`Post body: ${body}`);
     console.log(`Post category: ${category}`);
+    const newPost = {
+        title,
+        body,
+        category,
+    }
     // CALL POST ROUTE TO POSTS HERE
+    $.post("/api/posts/new", newPost, function(data) {
+        console.log(data);
+    }).then( function(res) {
+        window.location.assign('/posts');
+    });
 });
 
 $(".favorite-button").on("click", function () {

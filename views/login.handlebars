@@ -1,4 +1,7 @@
-<div class="background">
+<!DOCTYPE html>
+<html>
+
+<div class="main">
     <div class="container center-align">
         <div class="row">
             <div class="col s12">
@@ -11,18 +14,18 @@
                 <div class="row">
                     <div class="card-panel overflow-auto">
                         <h2>Log In</h2>
-                        <form>
+                        <form id="login" name="login" method="post" action="login">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix left-align">person</i>
-                                <input id="username-input" type="text">
-                                <label for="username-input">Username</label>
+                                <input id="email" type="text" name="email">
+                                <label for="email">Email</label>
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix left-align">lock</i>
-                                <input id="password-input" type="password">
-                                <label for="password-input">Password</label>
+                                <input id="password" type="password" name="password">
+                                <label for="password">Password</label>
                             </div>
-                            <button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="login-button">Sign In</button>
+                            <button class="btn orange darken-3 waves-effect waves-orange" type="submit">Sign In</button>
                         </form>
                         <p>Not a member yet? <a href="/register">Register now!</a></p>
                     </div>
@@ -31,3 +34,5 @@
         </div>
     </div>
 </div>
+
+</html>

@@ -9,7 +9,7 @@ module.exports = function(passport, user) {
   var LocalStrategy = require("passport-local").Strategy;
 
   passport.use(
-    "local-signup",
+    "local-register",
     new LocalStrategy(
       {
         usernameField: "email",

@@ -5,7 +5,7 @@ module.exports = function(app, passport) {
 
     app.get('/posts',isLoggedIn, authController.posts);
  
-    app.get('/signup', authController.signup);
+    app.get('/register', authController.register);
  
     app.get('/login', authController.login);
 
@@ -15,10 +15,10 @@ module.exports = function(app, passport) {
  
     
     
-    app.post('/signup', passport.authenticate('local-signup', {
+    app.post('/register', passport.authenticate('local-register', {
             successRedirect: '/dashboard',
  
-            failureRedirect: '/signup'
+            failureRedirect: '/register'
         }        
  
     ));
