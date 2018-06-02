@@ -6,9 +6,9 @@ exports.signup = function(req, res) {
  
 }
 
-exports.signin = function(req, res) {
+exports.login = function(req, res) {
     console.log('here')
-    res.render('signin');
+    res.render('login');
  
 }
 
