@@ -13,3 +13,42 @@ $("#post-button").on("click", function (e) {
     console.log(`Post category: ${category}`);
     // CALL POST ROUTE TO POSTS HERE
 });
+
+$(".favorite-button").on("click", function () {
+    const favState = $(this).find("i").text();
+    const favId = $(this).data("id");
+    let favsArray;
+    if (localStorage.getItem("favPosts")) {
+        favsArray = JSON.parse(localStorage.getItem("favPosts"));
+    } else {
+        favsArray = [];
+    }
+    if (favState === "favorite_border") {
+        favsArray.push(favId);
+        $(this).find("i").text("favorite");
+        $(this).addClass("orange-text text-darken-4");
+    } else {
+        favsArray.splice(favsArray.indexOf(favId), 1);
+        $(this).find("i").text("favorite_border");
+        $(this).removeClass("orange-text text-darken-4");
+    }
+    localStorage.setItem("favPosts", JSON.stringify(favsArray));
+});
+
+$(() => {
+    let favsArray;
+    if (localStorage.getItem("favPosts")) {
+        favsArray = JSON.parse(localStorage.getItem("favPosts"));
+    } else {
+        favsArray = [];
+    } 
+    $(".favorite-button").each(function() {
+        const favId = $(this).data("id")
+        if (favsArray.indexOf(favId) === -1) {
+            $(this).find("i").text("favorite_border");
+        } else {
+            $(this).find("i").text("favorite");
+            $(this).addClass("orange-text text-darken-4");
+        }
+    })
+});

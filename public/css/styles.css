@@ -88,3 +88,10 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
     -webkit-box-shadow: 0 1px 0 0 #ef6c00;
     box-shadow: 0 1px 0 0 #ef6c00;
 }
+
+.line-clamp-3 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+}
