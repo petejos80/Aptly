@@ -11,6 +11,7 @@ let PORT = process.argv.PORT || 8080;
 let db = require("./models");
 
 
+
 // data parsing by express
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ app.set("view engine", "handlebars");
 
 //Routes
 require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 
 // Sync Database
