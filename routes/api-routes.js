@@ -9,6 +9,18 @@ module.exports = function (app) {
 
 
     //  #### GETS ####
+
+    // gets the previous post, and edits it
+    app.get("/api/posts/:id", function (req, res){
+        db.Post.findOne({
+            where:{
+              id: req.params.id  
+            } 
+        }).then(function(result){
+            console.log(result)
+            res.render("posts-form", result)
+        })
+    })
     //Route for all post
     app.get("/api/posts", function (req, res) {
         db.Post.findAll({}).then(function (result) {
@@ -38,17 +50,20 @@ module.exports = function (app) {
     });
 
     //  #### PUTS ####
-    //update entry with a specific user id// then redirects
-    app.put("/api/update/:id", function (req, res) {
+    //updated entry from an edited post...Don't forget to deliberate about the :id and how to protect it....
+    app.put("/api/posts/:id", function (req, res) {
         db.Post.findOne({
             where: {
-                author: req.params.id
+                author: req.body.author, 
+                id: req.body.id,
             }
         }).then(function (Post) {
             Post.updateAttributes({
-                title: "I did It!"
+                category: req.body.category, 
+                title: req.body.title, 
+                body: req.body.body, 
             })
-            res.redirect("/");
+            res.redirect("/posts");
         })
     })
 
@@ -59,6 +74,7 @@ module.exports = function (app) {
             category: req.body.category,
             title: req.body.title,
             body: req.body.body,
+            //Need to remind frontend to make plac for Author
             author: "Tiesto",
         }).then(function (result) {
             res.redirect("/posts");
@@ -89,7 +105,8 @@ module.exports = function (app) {
     app.delete("/api/delete/:id", function (req, res) {
         db.Post.destroy({
             where: {
-                id: req.params.id
+                id: req.params.id,
+                author: req.body.author, 
             }
         })
         .then(function(result){

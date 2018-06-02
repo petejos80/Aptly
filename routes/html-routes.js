@@ -18,7 +18,7 @@ module.exports = function (app) {
     }));
 
   
-
+/// #### GET ROUTES ####
     app.get("/register", function (req, res){
         res.render("register")
     })
@@ -56,6 +56,22 @@ module.exports = function (app) {
             });
         });
     })
+
+    app.get("/posts/edit/:id", function(req, res) {
+       db.Post.findOne({
+           raw: true,
+            where: {
+                id: req.params.id
+            }
+        }).then(function (Post) {
+            console.log(Post);
+            Post.edit = 1;
+            res.render("posts-form", {
+                post: Post,
+            });
+        })
+    
+    });
 
     app.get("/posts/new", function (req, res){
         res.render("posts-form")
