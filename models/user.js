@@ -35,7 +35,7 @@
  
 //         password: {
 //             type: Sequelize.STRING,
-//             allowNull: false
+            // allowNull: false
 //         },
  
 //         last_login: {
@@ -63,30 +63,30 @@ module.exports = function (sequelize, DataTypes) {
         userId:
             {
                 type: DataTypes.BIGINT,
-                allowNull: true,
+                // allowNull: true,
                 primaryKey: true, 
                 autoIncrement: true, 
                 validation: {
                     is: /^[a-z]+$/i 
                 }         
             },  
-        userName:
-            {
-                type:  DataTypes.STRING, 
-                allowNull: false,
-                validation:  {
-                    is: /^[a-z]+$/i       
-                }
-            },
+        // userName:
+        //     {
+        //         type:  DataTypes.STRING, 
+                // allowNull: false,
+        //         validation:  {
+        //             is: /^[a-z]+$/i       
+        //         }
+        //     },
         userPsswd:
             {
                 type: DataTypes.STRING,
-                allowNull: false
+                // allowNull: false
             }, 
         firstName:
             {
                 type: DataTypes.STRING,
-                allowNull: false,
+                // allowNull: false,
                 validation:  {
                     is: /^[a-z]+$/i         
                 } 
@@ -94,74 +94,74 @@ module.exports = function (sequelize, DataTypes) {
         lastName:
             {
                 type: DataTypes.STRING,
-                allowNull: false,
+                // allowNull: false,
                 validation: {
                     is: /^[a-z]+$/i        
                 } 
             } ,
-        unitNumber:
-            {
-                type: DataTypes.STRING,
-                allowNull: false, 
-                validation: {
-                    is: /^[a-z]+$/i          
-                }
-            }, 
+        // unitNumber:
+        //     {
+        //         type: DataTypes.STRING,
+                // allowNull: false, 
+        //         validation: {
+        //             is: /^[a-z]+$/i          
+        //         }
+        //     }, 
         email:
             {
                 type: DataTypes.STRING,
-                allowNull: false,
+                // allowNull: false,
                 validation: {
                     isEmail: true, 
                     is: /^[a-z]+$/i        
                 },        
             }, 
-        leaseEnd:
-            {
-                type: DataTypes.STRING,
-                allowNull: true, 
-                validation:{
-                    isDate: true
-                } 
-            },  
-        phone:
-            {
-                type: DataTypes.STRING,
-                allowNull: true,
-                defaultValue: DataTypes.UUIDV1, 
-                validation: {
-                    isNumeric: true        
-                }
-            }, 
-        interest:
-            {
-                type:  DataTypes.STRING,
-                allowNull: true, 
-                validation: {
-                    notEmpty: true
-                }
-            }, 
-        address:
-            {
-                type: DataTypes.STRING,
-                allowNull: true, 
-                validation: {
-                    is: /^[a-z]+$/i         
-                }
-            },  
-        geoLocation:
-            {
-                type: DataTypes.STRING,
-                allowNull: true,
-                validation: {
-                    isDecimal: true
-                } 
-            }, 
-        cookies:
-            {
-                type: DataTypes.STRING,
-                allowNull: true
-            }
+        // leaseEnd:
+        //     {
+        //         type: DataTypes.STRING,
+                // allowNull: true, 
+        //         validation:{
+        //             isDate: true
+        //         } 
+        //     },  
+        // phone:
+        //     {
+        //         type: DataTypes.STRING,
+                // allowNull: true,
+        //         defaultValue: DataTypes.UUIDV1, 
+        //         validation: {
+        //             isNumeric: true        
+        //         }
+        //     }, 
+        // interest:
+        //     {
+        //         type:  DataTypes.STRING,
+                // allowNull: true, 
+        //         validation: {
+        //             notEmpty: true
+        //         }
+        //     }, 
+        // address:
+        //     {
+        //         type: DataTypes.STRING,
+                // allowNull: true, 
+        //         validation: {
+        //             is: /^[a-z]+$/i         
+        //         }
+        //     },  
+        // geoLocation:
+        //     {
+        //         type: DataTypes.STRING,
+                // allowNull: true,
+        //         validation: {
+        //             isDecimal: true
+        //         } 
+        //     }, 
+        // cookies:
+        //     {
+        //         type: DataTypes.STRING,
+                // allowNull: true
+        //     }
     });
     console.log("user is ", User)
     return User

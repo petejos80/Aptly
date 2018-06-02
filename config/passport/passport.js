@@ -6,7 +6,11 @@ module.exports = function(passport, user) {
  
  
     var User = user;
-    console.log(User);
+    console.log('my name is', User);
+    console.log('my name is idlow', user.id);
+    console.log('my name is idhigh', User.userId);
+
+
  
     var LocalStrategy = require('passport-local').Strategy;
  
@@ -16,9 +20,9 @@ module.exports = function(passport, user) {
  
         {
  
-            usernameField: 'email',
+            usernameField: 'userName',
  
-            passwordField: 'password',
+            passwordField: 'userPsswd',
  
             passReqToCallback: true // allows us to pass back the entire request to the callback
  
@@ -105,7 +109,7 @@ module.exports = function(passport, user) {
                         }
  
                         if (newUser) {
- 
+                            console.log('New user Created', User.userId);
                             return done(null, newUser);
  
                         }

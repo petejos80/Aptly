@@ -24,7 +24,7 @@ app.use(passport.session()); // persistent login sessions
 app.use(express.static('public'))
  
 // For Handlebars
-// app.set('views', './app/views')
+// app.set('views', './views')
 app.engine('hbs', exphbs({
     extname: '.hbs', 
     defaultLayout: 'main', 
