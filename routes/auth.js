@@ -3,8 +3,8 @@ var authController = require('../controllers/authController.js');
  
 module.exports = function(app, passport) {
 
-    // app.get('/dashboard',authController.dashboard)
-    app.get('/dashboard',isLoggedIn, authController.dashboard);
+    
+    app.get('/posts', isLoggedIn, authController.posts);
  
     app.get('/register', authController.register);
  

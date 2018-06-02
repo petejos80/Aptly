@@ -12,9 +12,9 @@ exports.login = function(req, res) {
  
 }
 
-exports.dashboard = function(req, res) {
+exports.posts = function(req, res) {
  
-    res.render('dashboard');
+    res.render('posts');
  
 }
 
@@ -22,7 +22,7 @@ exports.logout = function(req, res) {
  
     req.session.destroy(function(err) {
  
-        res.redirect('/');
+        res.redirect('/login');
  
     });
  
