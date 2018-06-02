@@ -34,9 +34,20 @@ $("#update-post-button").on("click", function (e) {
         url: `/api/posts/${postId}`,
         data: updatePostData,
     }).then( function(res) {
-        console.log("here");
         window.location.href = "/posts";
     });
+})
+
+$(".delete-button").on("click", function() {
+    const deleteId = $(this).data("id");
+    console.log(deleteId);
+    $.ajax({
+        method: "DELETE",
+        url: `/api/posts/${deleteId}`
+    }).then( function(res) {
+        console.log(res);
+        location.reload();
+    })
 })
 
 $(".favorite-button").on("click", function () {

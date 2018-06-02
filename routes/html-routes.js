@@ -18,11 +18,7 @@ module.exports = function (app) {
     }));
 
   
-<<<<<<< Updated upstream
 /// #### GET ROUTES ####
-=======
-// ###### Get Routes
->>>>>>> Stashed changes
     app.get("/register", function (req, res){
         res.render("register")
     })
@@ -57,7 +53,6 @@ module.exports = function (app) {
         });
     })
 
-<<<<<<< Updated upstream
     app.get("/posts/edit/:id", function(req, res) {
        db.Post.findOne({
            raw: true,
@@ -73,11 +68,6 @@ module.exports = function (app) {
         })
     
     });
-=======
-    app.get("/posts/edit/:id",function (req, res){
-        res.send("This is from the /posts/edit/:id route")
-    })
->>>>>>> Stashed changes
 
     app.get("/posts/new", function (req, res){
         res.render("posts-form")
