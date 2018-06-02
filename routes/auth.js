@@ -16,7 +16,7 @@ module.exports = function(app, passport) {
     
     
     app.post('/register', passport.authenticate('local-register', {
-            successRedirect: '/dashboard',
+            successRedirect: '/posts',
  
             failureRedirect: '/register'
         }        

@@ -8,9 +8,36 @@ module.exports = function(passport, user) {
 
   var LocalStrategy = require("passport-local").Strategy;
 
+          //serialize
+passport.serializeUser(function(user, done) {
+ 
+    done(null, user.id);
+ 
+}),
+
+// deserialize user 
+passport.deserializeUser(function(id, done) {
+ 
+    User.findById(id).then(function(user) {
+ 
+        if (user) {
+ 
+            done(null, user.get());
+ 
+        } else {
+ 
+            done(user.errors, null);
+ 
+        }
+ 
+    });
+ 
+}),
+
   passport.use(
     "local-register",
     new LocalStrategy(
+
       {
         usernameField: "email",
 
@@ -18,22 +45,7 @@ module.exports = function(passport, user) {
 
         passReqToCallback: true // allows us to pass back the entire request to the callback
       },
-      // Serialize
-      passport.serializeUser(function(user, done) {
-        console.log("user:", user);
-        done(null, user.id);
-      }),
 
-      // Deserialize user
-      passport.deserializeUser(function(id, done) {
-        User.findById(id).then(function(user) {
-          if (user) {
-            done(null, user.get());
-          } else {
-            done(user.errors, null);
-          }
-        });
-      }),
 
       function(req, email, password, done) {
         var generateHash = function(password) {
