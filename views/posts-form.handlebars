@@ -16,12 +16,7 @@
                 </div>
                 <div class="col s12 m5">
                     <a id="post-category-dropdown-button" class="dropdown-trigger btn-flat waves-effect waves-orange" href="#" data-target="post-category-dropdown">
-                        <i class="material-icons right">arrow_drop_down</i>
-                        {{#if post.edit}}
-                        {{post.category}}
-                        {{else}}
-                        Post Category
-                        {{/if}}</a>
+                        <i class="material-icons right">arrow_drop_down</i>{{#if post.edit}}{{post.category}}{{else}}Post Category{{/if}}</a>
                     <ul id="post-category-dropdown" class="dropdown-content">
                         <li>
                             <a href="#" class="post-category-dropdown-option orange-text">

@@ -1,3 +1,15 @@
+function getPostInfo() {
+    const title = $("#post-title-input").val().trim();
+    const body = $("#post-body-input").val().trim();
+    const category = $("#post-category-dropdown-button").html().split("</i>")[1];
+    const newPost = {
+        title,
+        body,
+        category,
+    }
+    return newPost;
+}
+
 $(".post-category-dropdown-option").on("click", function () {
     const selection = $(this).html().split("</i>")[1];
     $("#post-category-dropdown-button").html(`<i class="material-icons right">arrow_drop_down</i>${selection}`);
@@ -5,23 +17,27 @@ $(".post-category-dropdown-option").on("click", function () {
 
 $("#new-post-button").on("click", function (e) {
     e.preventDefault();
-    const title = $("#post-title-input").val().trim();
-    const body = $("#post-body-input").val().trim();
-    const category = $("#post-category-dropdown-button").html().split("</i>")[1];
-    console.log(`Post title: ${title}`);
-    console.log(`Post body: ${body}`);
-    console.log(`Post category: ${category}`);
-    const newPost = {
-        title,
-        body,
-        category,
-    }
-    $.post("/api/posts/new", newPost, function(data) {
+    const newPostData = getPostInfo();
+    $.post("/api/posts/new", newPostData, function(data) {
         console.log(data);
     }).then( function(res) {
-        window.location.assign("/posts")
+        window.location.assign("/posts");
     });
 });
+
+$("#update-post-button").on("click", function (e) {
+    e.preventDefault();
+    const updatePostData = getPostInfo();
+    const postId = $(this).data("id");
+    $.ajax({
+        method: "PUT",
+        url: `/api/posts/${postId}`,
+        data: updatePostData,
+    }).then( function(res) {
+        console.log("here");
+        window.location.href = "/posts";
+    });
+})
 
 $(".favorite-button").on("click", function () {
     const favState = $(this).find("i").text();
@@ -43,14 +59,6 @@ $(".favorite-button").on("click", function () {
     }
     localStorage.setItem("favPosts", JSON.stringify(favsArray));
 });
-
-// $(".edit-button").on("click", function() {
-//     let editId = $(this).data("id");
-//     console.log(editId);
-//     $.get(`/posts/edit/${editId}`, function(data) {
-//         console.log(data);
-//     });
-// })
 
 $(() => {
     let favsArray;
