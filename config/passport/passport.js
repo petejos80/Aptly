@@ -3,7 +3,7 @@ var bCrypt = require('bcrypt-nodejs');
  
  
 module.exports = function(passport, user) {
- 
+    console.log('hi guyys')  
  
     var User = user;
  
@@ -12,7 +12,6 @@ module.exports = function(passport, user) {
  
     passport.use('local-signup', new LocalStrategy(
 
- 
         {
  
             usernameField: 'email',
@@ -22,26 +21,12 @@ module.exports = function(passport, user) {
             passReqToCallback: true // allows us to pass back the entire request to the callback
  
         },
-
-        
- 
- 
- 
-        function(req, email, password, done) {
- 
-            var generateHash = function(password) {
- 
-                return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
- 
-            };
-
-        
-        // Serialize
-        passport.serializeUser(function(user, done) {
-        
+         // Serialize
+         passport.serializeUser(function(user, done) {
+            console.log('user:', user)
             done(null, user.id);
         
-        });
+        }),
 
         // Deserialize user 
         passport.deserializeUser(function(id, done) {
@@ -60,7 +45,20 @@ module.exports = function(passport, user) {
         
             });
         
-        });
+        }),
+
+        
+ 
+ 
+ 
+        function(req, email, password, done) {
+ 
+            var generateHash = function(password) {
+ 
+                return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+ 
+            };
+
  
             User.findOne({
                 where: {

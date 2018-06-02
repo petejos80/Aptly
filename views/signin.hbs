@@ -1,22 +1,5 @@
 <!DOCTYPE html>
 <html>
-{{!--  
-<head>
-    <title></title>
-</head>
- 
-<body>
-    <form id="signin" name="signin" method="post" action="signin">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign In" />
-    </form>
- 
-</body>
- 
-</html> --}}
 
 <div class="main">
     <div class="container center-align">
@@ -34,15 +17,15 @@
                         <form id="signin" name="signin" method="post" action="signin">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix left-align">person</i>
-                                <input id="email-input" type="text" name="email">
-                                <label for="email-input">Email</label>
+                                <input id="email" type="text" name="email">
+                                <label for="email">Email</label>
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix left-align">lock</i>
-                                <input id="password-input" type="password" name="password">
-                                <label for="password-input">Password</label>
+                                <input id="password" type="password" name="password">
+                                <label for="password">Password</label>
                             </div>
-                            <button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="sign-in-button">Sign In</button>
+                            <button class="btn orange darken-3 waves-effect waves-orange" type="submit">Sign In</button>
                         </form>
                         <p>Not a member yet? <a href="/signup">Register now!</a></p>
                     </div>
