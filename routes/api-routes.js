@@ -103,11 +103,10 @@ module.exports = function (app) {
     })
     //  #### DELETES  ####
     //deletes a user
-    app.delete("/api/posts/delete/:id", function (req, res) {
+    app.delete("/api/posts/:id", function (req, res) {
         db.Post.destroy({
             where: {
                 id: req.params.id,
-                author: req.body.author,
             }
         })
             .then(function (result) {
