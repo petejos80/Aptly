@@ -1,105 +1,108 @@
-Sequelize = require("sequelize")
-module.exports = function (sequelize, DataTypes) {
-    //User Model used to access User Table on MySql database
+module.exports = function(sequelize, Sequelize) {
+ 
+    var DataTypes = require('sequelize/lib/data-types');
 
-    let User = sequelize.define("User", {
-        userId:
-         {
-            type: DataTypes.BIGINT,
-            allowNull: true,
-            primaryKey: true,
+    var User = sequelize.define('user', {
+ 
+        id: {
             autoIncrement: true,
-            validation: {
-                is: /^[a-z]+$/i
+            primaryKey: true,
+            type: Sequelize.INTEGER
+        },
+ 
+        firstname: {
+            type: Sequelize.STRING,
+            notEmpty: true
+        },
+ 
+        lastname: {
+            type: Sequelize.STRING,
+            notEmpty: true
+        },
+ 
+        username: {
+            type: Sequelize.TEXT
+        },
+
+        email: {
+            type: Sequelize.STRING,
+            validate: {
+                isEmail: true
             }
         },
-        userName: 
+
+        leaseEnd:
         {
             type: DataTypes.STRING,
-            allowNull: false,
-            validation: {
-                is: /^[a-z]+$/i
-            }
+            allowNull: true, 
+            validation:{
+                isDate: true
+            } 
         },
-        userPsswd: 
-        {
-            type: DataTypes.STRING,
+ 
+        password: {
+            type: Sequelize.STRING,
             allowNull: false
         },
-        firstName: 
-        {
+        
+        unitnumber: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false, 
             validation: {
-                is: /^[a-z]+$/i
+                is: /^[a-z]+$/i          
             }
-        },
-        lastName: 
-        {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validation: {
-                is: /^[a-z]+$/i
-            }
-        },
-        unitNumber: 
-        {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validation: {
-                is: /^[a-z]+$/i
-            }
-        },
-        email: 
-        {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validation: {
-                isEmail: true,
-                is: /^[a-z]+$/i
-            },
-        },
-        leaseEnd: 
-        {
+        }, 
+
+        phone: {
             type: DataTypes.STRING,
             allowNull: true,
+            defaultValue: DataTypes.UUIDV1, 
             validation: {
-                isDate: true
+                isNumeric: true        
             }
-        },
-        phone: 
-        {
-            type: DataTypes.STRING,
-            allowNull: true,
-            defaultValue: DataTypes.UUIDV1,
-            validation: {
-                isNumeric: true
-            }
-        },
-        interest: 
-        {
-            type: DataTypes.STRING,
-            allowNull: true,
+        }, 
+        
+        interest: {
+            type:  DataTypes.STRING,
+            allowNull: true, 
             validation: {
                 notEmpty: true
             }
-        },
-        address: 
-        {
+        }, 
+    
+        address: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: true, 
             validation: {
-                is: /^[a-z]+$/i
+                is: /^[a-z]+$/i         
             }
-        },
-        geoLocation: 
-        {
+        },  
+    
+        geoLocation: {
             type: DataTypes.STRING,
             allowNull: true,
             validation: {
                 isDecimal: true
-            }
+            } 
+        }, 
+    
+        cookies: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+ 
+        last_login: {
+            type: Sequelize.DATE
+        },
+ 
+        status: {
+            type: Sequelize.ENUM('active', 'inactive'),
+            defaultValue: 'active'
         }
+ 
+ 
     });
-    return User
+ 
+    return User;
+ 
 }
