@@ -1,20 +1,20 @@
 var exports = module.exports = {}
  
-exports.signup = function(req, res) {
+exports.register = function(req, res) {
  
-    res.render('signup');
+    res.render('register');
  
 }
 
-exports.signin = function(req, res) {
+exports.login = function(req, res) {
     console.log('here')
-    res.render('signin');
+    res.render('login');
  
 }
 
-exports.dashboard = function(req, res) {
+exports.posts = function(req, res) {
  
-    res.render('dashboard');
+    res.render('posts');
  
 }
 
@@ -22,7 +22,7 @@ exports.logout = function(req, res) {
  
     req.session.destroy(function(err) {
  
-        res.redirect('/');
+        res.redirect('/login');
  
     });
  
