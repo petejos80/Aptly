@@ -1,8 +1,9 @@
 // Handles the routes that send users to different html pages
-
+const db = require("../models");
 let path = require("path");
 let express = require("express");
 let exphbs = require("express-handlebars");
+let moment = require("moment");
 
 let app = express(); 
 
@@ -13,7 +14,7 @@ module.exports = function (app) {
     app.engine(".hbs", exphbs({
         defaultLayout: 'main',
         extname: ".hbs",
-        layoutsDir: path.join(__dirname, "views/layouts")
+        layoutsDir: path.join(__dirname, "views/layouts"),
     }));
 
   
@@ -23,7 +24,7 @@ module.exports = function (app) {
     })
     
     app.get("/events", function (req, res ) {
-        res.send("This is the route to Create an Event")
+        res.render("events")
     })
 
     app.get("/edit", function (req, res ) {
@@ -39,7 +40,21 @@ module.exports = function (app) {
     })
 
     app.get("/posts", function (req, res){
-        res.render("posts")
+        db.Post.findAll({
+            raw: true,
+            order: [["updatedAt", "DESC"]],
+        }).then((data) => {
+            const dataVals = data.map((dataRow) => {
+                const cat = dataRow.category.split(" ").join("");
+                const updatedMoment = moment(dataRow.updatedAt, moment.HTML5_FMT.DATETIME_LOCAL_MS);
+                dataRow.updatedAt = updatedMoment.format("MMM D [at] h:mm a");
+                dataRow[cat] = 1;
+                return dataRow;
+            });
+            res.render("posts", {
+                posts: data,
+            });
+        });
     })
 
     app.get("/posts/new", function (req, res){
