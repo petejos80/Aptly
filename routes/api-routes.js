@@ -48,21 +48,20 @@ module.exports = function (app) {
             Post.updateAttributes({
                 title: "I did It!"
             })
-            res.redirect("/")
+            res.redirect("/");
         })
     })
 
     //  #### POSTS ####
      //creates a new entry 
-    app.post("/api/new", function (req, res) {
-        db.Post.create({
-            category: "Events",
-            title: "Got the fiyah!",
-            body: "Come one come all see all the junk that I have to sell. It will be great!",
+    app.post("/api/posts/new", function (req, res) {
+           db.Post.create({
+            category: req.body.category,
+            title: req.body.title,
+            body: req.body.body,
             author: "Tiesto",
         }).then(function (result) {
-            //make sure to add the res.redirect when done with developing
-            res.json(result);
+            res.redirect("/posts");
         })
     })
 
@@ -82,7 +81,7 @@ module.exports = function (app) {
             geolocation: "34.44949494, 75.9000090",
         }).then(function(result) {
             //make sure to add the res.redirect when done with
-            res.json(result)
+            res.json(result);
         })
     })
         //  #### DELETES  ####
