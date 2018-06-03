@@ -70,6 +70,7 @@ module.exports = function (app) {
     });
 
     app.get("/posts/new", function (req, res){
+        console.log("here");
         res.render("posts-form")
     })
 
