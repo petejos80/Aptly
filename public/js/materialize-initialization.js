@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log("here");
     $(".modal").modal();
     $(".dropdown-trigger").dropdown({
         coverTrigger: false,

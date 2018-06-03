@@ -43,11 +43,14 @@ app.get('/', function(req, res) {
 var models = require("./models");
  
 //Routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 var authRoute = require('./routes/auth.js')(app,passport);
  
  
 //Load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
+
  
  
 //Sync Database
