@@ -70,6 +70,10 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
     font-size: 1.75rem;
 }
 
+.accounterror {
+    color: red;
+}
+
 .dropdown-trigger {
     color: #9e9e9e;
     height: 3rem;

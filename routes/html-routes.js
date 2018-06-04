@@ -42,12 +42,10 @@ exports.login = function (req, res) {
 }
 
 exports.failedlogin = function (req, res) {
-    console.log("failed login hit")
     res.render("login", {loginFail: true});
 }
 
 exports.failedregister = function (req, res) {
-    console.log("failed login hit")
     res.render("register", {registerFail: true});
 }
 

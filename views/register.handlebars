@@ -21,7 +21,8 @@
                     <div class="card-panel grey lighten-5 overflow-auto">
                         <h2>Register</h2>
                         {{#if registerFail}}
-                        <h3>Email address exists - try again</h3>
+                        <h5 class="accounterror">An account with that email already exists.</h5>
+                        <a href = "/login"><h6> <strong>Click here to login</strong></h6></a>
                         {{/if}}
                         <form id="register" name="register" method="post" action="/register">
                             <div class="row">
