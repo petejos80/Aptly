@@ -39,6 +39,14 @@ exports.logout = function (req, res) {
     })
 }
 
+exports.failedlogin = function (req, res) {   
+    res.render("login", {loginFail: true});
+    }
+    
+exports.failedregister = function (req, res) {
+    res.render("register", {registerFail: true});
+    }
+
 exports.posts_edit = function (req, res) {
     db.Post.findOne({
         raw: true,
