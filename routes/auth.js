@@ -8,6 +8,8 @@ module.exports = function(app, passport) {
     app.get('/posts/edit/:id', isLoggedIn, html_routes.posts_edit);
 
     app.get('/posts/new', isLoggedIn, html_routes.posts_new);
+
+    app.get('/users/:id', isLoggedIn, html_routes.user_profile);
  
     app.get('/register', html_routes.register);
  

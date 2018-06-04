@@ -18,6 +18,9 @@ exports.posts = function (req, res) {
         });
         res.render("posts", {
             posts: data,
+            user: {
+                id: req.user.id
+            }
         });
     });
 }
@@ -46,10 +49,31 @@ exports.posts_edit = function (req, res) {
         data.edit = 1;
         res.render("posts-form", {
             post: data,
+            user: {
+                id: req.user.id
+            }
         });
     })
 }
 
 exports.posts_new = function (req, res) {
-    res.render("posts-form")
+    res.render("posts-form", {
+        user: {
+            id: req.user.id
+        }
+    })
+}
+
+exports.user_profile = function (req, res) {
+    db.user.findOne({
+        raw: true,
+        where: {
+            id: req.user.id
+        }
+    }).then(function (data) {
+        console.log(data);
+        res.render("profile", {
+            user: data
+        });
+    })
 }
