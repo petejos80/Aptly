@@ -54,7 +54,7 @@ passport.deserializeUser(function(id, done) {
 
         User.findOne({
           where: {
-            email: email
+            email: email,
           }
         }).then(function(user) {
           if (user) {

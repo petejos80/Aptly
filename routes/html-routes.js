@@ -26,8 +26,29 @@ exports.register = function (req, res) {
     res.render("register");
 }
 
+exports.profile = function (req, res) {
+    app.get('/profile', function (req, res) {
+        TABLE.findAll()
+          .then((users) => {
+                res.render('users', {
+                     users: users
+                });
+          });
+    });
+}
+
 exports.login = function (req, res) {
     res.render("login");
+}
+
+exports.failedlogin = function (req, res) {
+    console.log("failed login hit")
+    res.render("login", {loginFail: true});
+}
+
+exports.failedregister = function (req, res) {
+    console.log("failed login hit")
+    res.render("register", {registerFail: true});
 }
 
 exports.logout = function (req, res) {

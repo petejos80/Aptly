@@ -20,6 +20,9 @@
                 <div class="row">
                     <div class="card-panel grey lighten-5 overflow-auto">
                         <h2>Register</h2>
+                        {{#if registerFail}}
+                        <h3>Email address exists - try again</h3>
+                        {{/if}}
                         <form id="register" name="register" method="post" action="/register">
                             <div class="row">
                                 <div class="row">

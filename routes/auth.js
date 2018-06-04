@@ -8,26 +8,32 @@ module.exports = function(app, passport) {
     app.get('/posts/edit/:id', isLoggedIn, html_routes.posts_edit);
 
     app.get('/posts/new', isLoggedIn, html_routes.posts_new);
+
+    app.get('/users/', isLoggedIn, html_routes.profile);
  
     app.get('/register', html_routes.register);
  
     app.get('/login', html_routes.login);
 
     app.get('/logout', html_routes.logout);
+
+    app.get('/failedlogin', html_routes.failedlogin);
+
+    app.get('/failedregister', html_routes.failedregister);
  
     app.post('/register', passport.authenticate('local-register', {
             successRedirect: '/posts',
  
-            failureRedirect: '/register'
-        }        
- 
+            failureRedirect: '/failedregister'
+        }
     ));
 
     app.post('/login', passport.authenticate('local-login', {
         successRedirect: '/posts',
  
-        failureRedirect: '/login'
-    }));
+        failureRedirect: '/failedlogin'
+    }
+));
 
     app.post('/api/posts/new', api_routes.posts_create);
 
