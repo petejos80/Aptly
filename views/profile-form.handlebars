@@ -1,0 +1,28 @@
+{{> navbar}}
+
+<div class="container">
+    <div class="row">
+        <form>
+        <div class="col s12">
+            <h2>My Profile</h2>
+            <ul class="collection with-header">
+                <li class="collection-header">
+                    <h4>{{user.firstname}} {{user.lastname}}</h4>
+                </li>
+                <li class="collection-item">
+                    <input id="post-title-input" type="text" value="{{user.firstname}} {{user.lastname}}">
+                    <label for="post-title-input">Title</label>
+                    {{!-- <i class="material-icons tooltipped" data-position="top" data-tooltip="email">email</i> {{user.email}}</li> --}}
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="phone">phone</i> {{user.phone}}</li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="unit number">person_pin</i> {{user.unitnumber}}</li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="lease end">date_range</i> {{user.leaseEnd}}</li>
+            </ul>
+            <a class="orange darken-3 waves-effect waves-orange btn" href="/users/edit/{{user.id}}">
+                <i class="material-icons right">edit</i>Edit</a>
+        </div>
+        </form>
+    </div>
+</div>
