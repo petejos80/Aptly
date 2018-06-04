@@ -8,6 +8,10 @@ nav {
     margin-bottom: 20px;
 }
 
+.accounterror {
+    color: red;
+}
+
 nav .brand-logo {
     margin-left: 10px;
     font-size: 50px;
