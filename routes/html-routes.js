@@ -72,7 +72,7 @@ exports.users_edit = function (req, res) {
         }
     }).then(function (data) {
         console.log(data);
-        res.render("users-form", {
+        res.render("profile", {
             user: data
         });
     })

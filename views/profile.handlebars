@@ -3,6 +3,92 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
+            {{!-- {{#if user.edit}} --}}
+            <h2>Edit Profile</h2>
+            <form id="register" name="register" method="post" action="/register">
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">filter_1</i>
+                    <input id="firstname-input" name="firstname" type="text" value="{{user.firstname}}"/>
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">filter_2</i>
+                    <input id="lastname-input" name="lastname" type="text" value="{{user.lastname}}" />
+                    <label for="lastname">Last Name</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">location_city</i>
+                    <input id="unitnumber-input" name="unitnumber" type="text" value="{{user.unitnumber}}" />
+                    <label for="unitnumber">Unit Number</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">phone</i>
+                    <input id="phone-input" name="phone" type="tel" value="{{user.phone}}" />
+                    <label for="phone">Phone Number</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">date_range</i>
+                    <input id="leasestart-input" name="leasestart" type="text" class="datepicker" value="{{user.leaseStart}}"/>
+                    <label for="leasestart">Lease Start</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">exit_to_app</i>
+                    <input id="leaseend-input" name="leaseend" type="text" class="datepicker" value="{{user.leaseEnd}}"/>
+                    <label for="leaseend">Lease End</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">email</i>
+                    <input id="email-input" class="text" name="email" type="email" value="{{user.email}}" />
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">vpn_key</i>
+                    <input id="password-input" name="password" type="password" value="{{user.password}}" />
+                    <label for="password">Password</label>
+                </div>
+            </form>
+            {{!-- {{else}}
+            <h2>My Profile</h2>
+            <ul class="collection with-header">
+                <li class="collection-header">
+                    <h4>{{user.firstname}} {{user.lastname}}</h4>
+                </li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="email">email</i> {{user.email}}</li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="phone">phone</i> {{user.phone}}</li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="unit number">person_pin</i> {{user.unitnumber}}</li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="lease end">date_range</i> {{user.leaseEnd}}</li>
+            </ul> --}}
+            {{!-- {{/if}} 
+            {{#if user.edit}} --}}
+            <button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="update-user-button" data-id={{user.id}}>Submit</button>
+            {{!-- {{else}}
+            <a class="orange darken-3 waves-effect waves-orange btn" href="/users/edit/{{user.id}}">
+                <i class="material-icons right">edit</i>Edit</a>
+            {{/if}} --}}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- {{> navbar}}
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
             <h2>My Profile</h2>
             <ul class="collection with-header">
                 <li class="collection-header">
@@ -21,4 +107,17 @@
                 <i class="material-icons right">edit</i>Edit</a>
         </div>
     </div>
-</div>
+</div> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,26 +20,26 @@ module.exports = function(sequelize, Sequelize) {
 
         email: {
             type: Sequelize.STRING,
-            validate: {
-                isEmail: true
-            }
+            // validate: {
+            //     isEmail: true
+            // }
         },
 
         leaseEnd:
         {
             type: DataTypes.DATE,
             allowNull: true, 
-            validation:{
-                isDate: true
-            } 
+            // validation:{
+            //     isDate: true
+            // } 
         },
         leaseStart:
         {
             type: DataTypes.DATE,
             allowNull: true,
-            validation:{
-                isDate: true
-            }
+            // validation:{
+            //     isDate: true
+            // }
         },
  
         password: {

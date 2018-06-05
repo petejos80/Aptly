@@ -1,7 +1,7 @@
 function getUserInfo() {
-    const firstname = $("#firstname-input").val().trim();
-    const lastname = $("#lastname-input").val().trim();
-    const email = $("#email-input").html().split("</i>")[1];
+    const firstname = $("#firstname-input").val();
+    const lastname = $("#lastname-input").val();
+    const email = $("#email-input").html();
     const leaseEnd = $("#leaseend-input").html();
     const leaseStart = $("#leasestart-input").html();
     const password = $("#password-input").html();
@@ -29,6 +29,6 @@ $("#update-user-button").on("click", function (e) {
         url: `/api/users/${userId}`,
         data: updateUserData,
     }).then( function(res) {
-        window.location.href = "/users-form";
+        window.location.href = "/profile";
     });
 })

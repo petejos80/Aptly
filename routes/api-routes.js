@@ -29,6 +29,11 @@ exports.users_update = function (req, res) {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
+            leaseEnd: req.body.leaseEnd,
+            leaseStart: req.body.leaseStart,
+            password: req.body.password,
+            unitnumber: req.body.unitnumber,
+            phone: req.body.phone,
         },
         {
             where: {
