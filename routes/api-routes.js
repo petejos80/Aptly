@@ -23,6 +23,23 @@ exports.posts_update = function (req, res) {
     });
 }
 
+exports.users_update = function (req, res) {
+    db.user.update(
+        {
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    ).then(function (rowsUpdated) {
+        res.json(rowsUpdated);
+    });
+}
+
 exports.posts_delete = function (req, res) {
     db.Post.destroy({
         where: {

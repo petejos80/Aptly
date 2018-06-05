@@ -1,0 +1,37 @@
+{{> navbar}}
+
+<div class="container">
+    <div class="row">
+        <form>
+        <div class="col s12">
+            <h2>My Profile</h2>
+            <ul class="collection with-header">
+                <div class="input-field col s12 m7">
+                    <input id="firstname-input" type="text" value="{{user.firstname}}">
+                    <label for="post-title-input">{{user.firstname}}</label>
+                </div>
+                <li class="collection-header">
+                    <div class="input-field col s12 m7">
+                    <input id="lastname-input" type="text" value="{{user.lastname}}">
+                    <label for="post-title-input">{{user.lastname}}</label>
+                </div>
+                </li>
+                <li class="collection-item">
+                    <div class="input-field col s12 m7">
+                    <input id="email-input" type="text" value="{{user.email}}">
+                    <label for="post-title-input">{{user.email}}</label>
+
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="email">email</i> {{user.email}}</li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="phone">phone</i> {{user.phone}}</li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="unit number">person_pin</i> {{user.unitnumber}}</li>
+                <li class="collection-item">
+                    <i class="material-icons tooltipped" data-position="top" data-tooltip="lease end">date_range</i> {{user.leaseEnd}}</li>
+            </ul>
+            <button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="update-user-button" data-id={{user.id}}>Update User</button>
+                <i class="material-icons right">edit</i>Edit</a>
+        </div>
+        </form>
+    </div>
+</div>

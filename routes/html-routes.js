@@ -64,6 +64,20 @@ exports.posts_edit = function (req, res) {
     })
 }
 
+exports.users_edit = function (req, res) {
+    db.user.findOne({
+        raw: true,
+        where: {
+            id: req.user.id
+        }
+    }).then(function (data) {
+        console.log(data);
+        res.render("users-form", {
+            user: data
+        });
+    })
+}
+
 exports.posts_new = function (req, res) {
     res.render("posts-form", {
         user: {
