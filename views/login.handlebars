@@ -1,41 +1,33 @@
-<!DOCTYPE html>
-<html>
-
 <div class="background">
     <div class="container center-align">
-        <div class="row">
-            <div class="col s12">
-                <h1><span class="hide-on-small-only">Welcome to </span>Name</h1>
-                <p class="tagline">This is where our spiffy tagline can go.</p>
-            </div>
-        </div>
-        <div class="row">
+        {{> tagline}}
+        <div class="row last-row">
             <div class="col s12 m8 l6 offset-m2 offset-l3">
                 <div class="row">
                     <div class="card-panel overflow-auto">
                         <h2>Log In</h2>
                         {{#if loginFail}}
-                        <h5 class="accounterror">Invalid login.  Please try again.</h5>
+                        <h5 class="accounterror">Invalid login. Please try again.</h5>
                         {{/if}}
                         <form id="login" name="login" method="post" action="login">
                             <div class="input-field col s12">
-                                <i class="material-icons prefix left-align">person</i>
+                                <i class="material-icons prefix left-align">email</i>
                                 <input id="email" type="text" name="email">
                                 <label for="email">Email</label>
                             </div>
                             <div class="input-field col s12">
-                                <i class="material-icons prefix left-align">lock</i>
+                                <i class="material-icons prefix left-align">vpn_key</i>
                                 <input id="password" type="password" name="password">
                                 <label for="password">Password</label>
                             </div>
                             <button class="btn orange darken-3 waves-effect waves-orange" type="submit">Sign In</button>
                         </form>
-                        <p>Not a member yet? <a href="/register">Register now!</a></p>
+                        <p>Not a member yet?
+                            <a href="/register">Register now!</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-</html>

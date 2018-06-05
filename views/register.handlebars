@@ -1,196 +1,63 @@
-<!DOCTYPE html>
-<html>
- 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project2</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title></title>
-</head>
-
 <div class="background">
-    <div class="container">
-        <div class="row" id="register-form">
-            <div class="col s12 m8 20 offset-m2 offset-l3">
+    <div class="container center-align">
+        {{> tagline}}
+        <div class="row last-row" id="register-form">
+            <div class="col s12 m8 offset-m2">
                 <div class="row">
-                    <div class="card-panel grey lighten-5 overflow-auto">
+                    <div class="card-panel overflow-auto">
                         <h2>Register</h2>
                         {{#if registerFail}}
-                        <h5 class="accounterror">There was an error with your registration.</h5>
-                        <a href = "/login"><h6> <strong>Click here to login</strong></h6></a>
+                        <h5 class="accounterror">That email is already in use.</h5>
+                        <p>Already a member?
+                            <a href="/login">Login now!</a>
+                        </p>
                         {{/if}}
                         <form id="register" name="register" method="post" action="/register">
-                            <div class="row">
-                                <div class="row">
-                                    <div class="input-field col s3">
-                                        <label for="email">Email Address</label>
-                                        <input class="text" name="email" type="email" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="firstname">Firstname</label>
-                                        <input name="firstname" type="text" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="lastname">Lastname</label>
-                                        <input name="lastname" type="text" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="password">Password</label>
-                                        <input name="password" type="password" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="username">Username</label>
-                                        <input name="username" type="text" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="leaseend">Lease End</label>
-                                        <input name="leaseend" type="date" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="unitnumber">Username</label>
-                                        <input name="unitnumber" type="text" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="phone">Phone Number</label>
-                                        <input name="phone" type="tel" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="interest">Interest</label>
-                                        <input name="interest" type="text" />
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <label for="address">Address</label>
-                                        <input name="address" type="text" />
-                                    </div>
-                                </div>
-                                <input class="btn" type="submit" value="Sign Up" />
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix left-align">filter_1</i>
+                                <input id="firstname" name="firstname" type="text" />
+                                <label for="firstname">First Name</label>
                             </div>
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix left-align">filter_2</i>
+                                <input id="lastname" name="lastname" type="text" />
+                                <label for="lastname">Last Name</label>
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix left-align">location_city</i>
+                                <input id="unitnumber" name="unitnumber" type="text" />
+                                <label for="unitnumber">Unit Number</label>
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix left-align">phone</i>
+                                <input id="phone" name="phone" type="tel" />
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix left-align">date_range</i>
+                                <input id="leasestart" name="leasestart" type="text" class="datepicker" />
+                                <label for="leasestart">Lease Start</label>
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix left-align">exit_to_app</i>
+                                <input id="leaseend" name="leaseend" type="text" class="datepicker" />
+                                <label for="leaseend">Lease End</label>
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix left-align">email</i>
+                                <input id="email" class="text" name="email" type="email" />
+                                <label for="email">Email Address</label>
+                            </div>
+                            <div class="input-field col s12 l6">
+                                <i class="material-icons prefix left-align">vpn_key</i>
+                                <input id="password" name="password" type="password" />
+                                <label for="password">Password</label>
+                            </div>
+                            <button class="btn orange darken-3 waves-effect waves-orange" type="submit">Sign Up</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    {{!-- <div class="background">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m8 offset-m2">
-                <div class="row">
-                    <div class="card-panel grey lighten-5 overflow-auto">
-                        <h2 class="center-align">Register</h2>
-                        <form>
-                            <div class="row">
-                                <div class="row">
-                                    <div class="input-field col s3">
-                                        <input id="userName" type="text" class="validate">
-                                        <label for="userName">User Name</label>
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <input id="password" type="password" class="validate">
-                                        <label for="password">Password</label>
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <input id="firstName" type="text" class="validate">
-                                        <label for="firstName">First Name</label>
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <input id="lastName" type="text" class="validate">
-                                        <label for="lastName">Last Name</label>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="input-field col s3">
-                                        <input id="unitNumber" type="text" class="validate">
-                                        <label for="unitNumber">Unit Number</label>
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <input placeholder="12012017" id="leaseEnd" type="text" class="validate">
-                                        <label for="leaseEnd">Lease End</label>
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Email</label>
-                                    </div>
-                                    <div class="input-field col s3">
-                                        <input placeholder="6121112222" id="phone" type="text" class="validate">
-                                        <label for="phone">phone</label>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col s6">
-                                        Preference (Posts)
-                                        <form action="#">
-                                            <p>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Sell/Buy</span>
-                                                </label>
-                                            </p>
-                                            <p>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Lost/Found</span>
-                                                </label>
-                                            </p>
-                                            <p>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Community Rooms</span>
-                                                </label>
-                                            </p>
-                                            <p>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Misc</span>
-                                                </label>
-                                            </p>
-                                        </form>
-                                    </div>
-
-                                    <div class="col s6">
-                                        Preference (Events)
-                                        <form action="#">
-                                            <p>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Music</span>
-                                                </label>
-                                            </p>
-                                            <p>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Arts</span>
-                                                </label>
-                                            </p>
-                                            <p>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Sports</span>
-                                                </label>
-                                            </p>
-                                            <p>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span>Misc</span>
-                                                </label>
-                                            </p>
-                                        </form>
-                                    </div>
-                                    
-                                </div>
-                                <div class="center-align"><button class="btn orange darken-3 waves-effect waves-orange" type="submit" id="register-button"><i class="material-icons right">add_circle_outline</i>Register</button></div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+</div>

@@ -8,4 +8,5 @@ $(document).ready(function () {
         fullWidth: true
     });
     $('.tooltipped').tooltip();
+    $('.datepicker').datepicker();
 });
