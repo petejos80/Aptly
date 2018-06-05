@@ -19,10 +19,6 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING,
             notEmpty: true
         },
- 
-        username: {
-            type: Sequelize.TEXT
-        },
 
         email: {
             type: Sequelize.STRING,
@@ -33,11 +29,19 @@ module.exports = function(sequelize, Sequelize) {
 
         leaseEnd:
         {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
             allowNull: true, 
             validation:{
                 isDate: true
             } 
+        },
+        leaseStart:
+        {
+            type: DataTypes.DATE,
+            allowNull: true,
+            validation:{
+                isDate: true
+            }
         },
  
         password: {
@@ -61,39 +65,6 @@ module.exports = function(sequelize, Sequelize) {
                 isNumeric: true        
             }
         }, 
-        
-        interest: {
-            type:  DataTypes.STRING,
-            allowNull: true, 
-            validation: {
-                notEmpty: true
-            }
-        }, 
-    
-        address: {
-            type: DataTypes.STRING,
-            allowNull: true, 
-            validation: {
-                is: /^[a-z]+$/i         
-            }
-        },  
-    
-        geoLocation: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validation: {
-                isDecimal: true
-            } 
-        }, 
-    
-        cookies: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
- 
-        last_login: {
-            type: Sequelize.DATE
-        },
  
         status: {
             type: Sequelize.ENUM('active', 'inactive'),
