@@ -1,14 +1,12 @@
+
+
+
 module.exports = function(sequelize, Sequelize) {
  
     var DataTypes = require('sequelize/lib/data-types');
 
     var User = sequelize.define('user', {
  
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
  
         firstname: {
             type: Sequelize.STRING,
@@ -99,10 +97,12 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
- 
+        
  
     });
- 
+        User.associate = function(models){
+            User.hasMany(models.Post);
+        };
     return User;
  
 }

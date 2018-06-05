@@ -25,5 +25,8 @@ module.exports = function (sequelize, DataTypes) {
         //Data and time should already be store on table &&ForeignKey will reference primary id from UserTable
 
     })
+     Post.associate = function (models) {
+         Post.belongsTo(models.user)
+     };
     return Post
 }
