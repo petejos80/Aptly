@@ -45,7 +45,27 @@ exports.posts_create = function (req, res) {
     })
 }
 
-
+exports.users_update = function (req, res) {
+    db.user.update(
+        {
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            leaseEnd: req.body.leaseEnd,
+            leaseStart: req.body.leaseStart,
+            password: req.body.password,
+            unitnumber: req.body.unitnumber,
+            phone: req.body.phone
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    ).then(function (rowsUpdated) {
+        res.json(rowsUpdated);
+    });
+}
 
 //     // gets the previous post, and edits it
 //     app.get("/api/posts/:id", function (req, res) {

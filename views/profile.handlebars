@@ -3,6 +3,51 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
+            {{#if edit}}
+            <h2>Edit Profile</h2>
+            <form id="register" name="register" method="post" action="/register">
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">filter_1</i>
+                    <input id="firstname" name="firstname" type="text" value="{{user.firstname}}"/>
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">filter_2</i>
+                    <input id="lastname" name="lastname" type="text" value="{{user.lastname}}" />
+                    <label for="lastname">Last Name</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">location_city</i>
+                    <input id="unitnumber" name="unitnumber" type="text" value="{{user.unitnumber}}" />
+                    <label for="unitnumber">Unit Number</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">phone</i>
+                    <input id="phone" name="phone" type="tel" value="{{user.phone}}" />
+                    <label for="phone">Phone Number</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">date_range</i>
+                    <input id="leasestart" name="leasestart" type="text" class="datepicker" value="{{user.leasestart}}"/>
+                    <label for="leasestart">Lease Start</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">exit_to_app</i>
+                    <input id="leaseend" name="leaseend" type="text" class="datepicker" value="{{user.leaseEnd}}"/>
+                    <label for="leaseend">Lease End</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">email</i>
+                    <input id="email" class="text" name="email" type="email" value="{{user.email}}" />
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix left-align">vpn_key</i>
+                    <input id="password" name="password" type="password" value="{{user.password}}" />
+                    <label for="password">Password</label>
+                </div>
+            </form>
+            {{else}}
             <h2>My Profile</h2>
             <ul class="collection with-header">
                 <li class="collection-header">
@@ -17,8 +62,13 @@
                 <li class="collection-item">
                     <i class="material-icons tooltipped" data-position="top" data-tooltip="lease end">date_range</i> {{user.leaseEnd}}</li>
             </ul>
+            {{/if}} {{#if edit}}
+            <a class="orange darken-3 waves-effect waves-orange btn" href="/users/{{user.id}}">
+                <i class="material-icons right">send</i>Submit</a>
+            {{else}}
             <a class="orange darken-3 waves-effect waves-orange btn" href="/users/edit/{{user.id}}">
                 <i class="material-icons right">edit</i>Edit</a>
+            {{/if}}
         </div>
     </div>
 </div>
