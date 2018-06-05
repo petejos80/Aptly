@@ -72,6 +72,20 @@ exports.posts_new = function (req, res) {
     })
 }
 
+exports.user_edit = function (req, res) {
+    db.user.findOne({
+        raw: true,
+        where: {
+            id: req.user.id
+        }
+    }).then(function (data) {
+        res.render("profile", {
+            edit: 1,
+            user: data,
+        });
+    });
+}
+
 exports.user_profile = function (req, res) {
     db.user.findOne({
         raw: true,

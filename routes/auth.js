@@ -10,6 +10,8 @@ module.exports = function(app, passport) {
     app.get('/posts/new', isLoggedIn, html_routes.posts_new);
 
     app.get('/users/:id', isLoggedIn, html_routes.user_profile);
+    
+    app.get('/users/edit/:id', isLoggedIn, html_routes.user_edit);
  
     app.get('/register', html_routes.register);
  
@@ -38,6 +40,8 @@ module.exports = function(app, passport) {
     app.post('/api/posts/new', api_routes.posts_create);
 
     app.put('/api/posts/:id', api_routes.posts_update);
+
+    app.put('/api/users/:id', api_routes.users_update);
 
     app.delete('/api/posts/:id', api_routes.posts_delete);
  
