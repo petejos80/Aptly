@@ -72,16 +72,16 @@ passport.deserializeUser(function(id, done) {
 
               lastname: req.body.lastname,
 
-              leasestart: req.body.leasestart,
+              leasestart: req.body.leasestart ? req.body.leasestart : null,
 
-              leaseend: req.body.leaseend,
+              leaseend: req.body.leaseend ? req.body.leaseend : null,
 
               unitnumber: req.body.unitnumber,
 
               phone: req.body.phone.replace(/\D/g,'')
 
             };
-
+            console.log(data);
             User.create(data).then(function(newUser, created) {
               if (!newUser) {
                 return done(null, false);

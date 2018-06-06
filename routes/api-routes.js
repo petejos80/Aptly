@@ -45,17 +45,22 @@ exports.posts_create = function (req, res) {
 }
 
 exports.users_update = function (req, res) {
+    const data = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        leaseend: req.body.leaseend ? req.body.leaseend : null,
+        leasestart: req.body.leasestart ? req.body.leasestart : null,
+        unitnumber: req.body.unitnumber,
+        phone: req.body.phone
+    };
+
+    if (req.body.password) {
+        data.password = bCrypt.hashSync(req.body.password, bCrypt.genSaltSync(8), null)
+    }
+    
     db.user.update(
-        {
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            email: req.body.email,
-            leaseend: req.body.leaseend,
-            leasestart: req.body.leasestart,
-            password: bCrypt.hashSync(req.body.password, bCrypt.genSaltSync(8), null),
-            unitnumber: req.body.unitnumber,
-            phone: req.body.phone
-        },
+        data,
         {
             where: {
                 id: req.user.id

@@ -21,11 +21,13 @@ $("#profile-submit").on("click", function (e) {
         phone
     }
 
+    const userId = $(this).data("id");
+
     $.ajax({
         method: "PUT",
-        url: `/api/users`,
+        url: `/api/users/${userId}`,
         data: userData,
     }).then( function(res) {
-        window.location.href = "/users";
+        window.location.href = `/users/${userId}`;
     });
 });

@@ -29,17 +29,17 @@ module.exports = function(sequelize, Sequelize) {
         {
             type: DataTypes.DATE,
             allowNull: true, 
-            validation:{
-                isDate: true
-            } 
+            // validation:{
+            //     isDate: true
+            // } 
         },
         leasestart:
         {
             type: DataTypes.DATE,
             allowNull: true,
-            validation:{
-                isDate: true
-            }
+            // validation:{
+            //     isDate: true
+            // }
         },
  
         password: {
