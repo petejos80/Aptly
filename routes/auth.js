@@ -41,7 +41,7 @@ module.exports = function(app, passport) {
 
     app.put('/api/posts/:id', api_routes.posts_update);
 
-    app.put('/api/users', api_routes.users_update);
+    app.put('/api/users/:id', api_routes.users_update);
 
     app.delete('/api/posts/:id', api_routes.posts_delete);
  

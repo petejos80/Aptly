@@ -43,7 +43,7 @@
                 </div>
                 <div class="input-field col s12 l6">
                     <i class="material-icons prefix left-align">vpn_key</i>
-                    <input id="password" name="password" type="password" value="{{user.password}}" />
+                    <input id="password" name="password" type="password" />
                     <label for="password">Password</label>
                 </div>
             </form>
@@ -70,7 +70,7 @@
                 <p><i class="material-icons left-align">email</i> {{user.email}}</p>
             </div>
             {{/if}} {{#if edit}}
-            <a class="orange darken-3 waves-effect waves-orange btn" type="submit" id="profile-submit">
+            <a class="orange darken-3 waves-effect waves-orange btn" type="submit" data-id={{user.id}} id="profile-submit">
                 <i class="material-icons right">send</i>Submit</a>
             {{else}}
             <br>

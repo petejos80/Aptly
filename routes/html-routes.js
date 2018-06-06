@@ -81,11 +81,17 @@ exports.user_edit = function (req, res) {
             id: req.user.id
         }
     }).then(function (data) {
-        const leasestartMoment = moment(data.leasestart, moment.HTML5_FMT.DATETIME_LOCAL_MS);
-        const leaseendMoment = moment(data.leaseend, moment.HTML5_FMT.DATETIME_LOCAL_MS);
-        data.leasestart = leasestartMoment.format("MMM DD, YYYY");
-        data.leaseend = leaseendMoment.format("MMM DD, YYYY");
-        data.phone = `(${data.phone.substring(0,3)}) ${data.phone.substring(3,6)}-${data.phone.substring(6,10)}`;
+        if (data.leasestart) {
+            const leasestartMoment = moment(data.leasestart, moment.HTML5_FMT.DATETIME_LOCAL_MS);
+            data.leasestart = leasestartMoment.format("MMM DD, YYYY");
+        }
+        if (data.leaseend) {
+            const leaseendMoment = moment(data.leaseend, moment.HTML5_FMT.DATETIME_LOCAL_MS);
+            data.leaseend = leaseendMoment.format("MMM DD, YYYY");
+        }
+        if (data.phone) {
+            data.phone = `(${data.phone.substring(0,3)}) ${data.phone.substring(3,6)}-${data.phone.substring(6,10)}`;
+        }
         res.render("profile", {
             edit: 1,
             user: data,
@@ -100,11 +106,17 @@ exports.user_profile = function (req, res) {
             id: req.user.id
         }
     }).then(function (data) {
-        const leasestartMoment = moment(data.leasestart, moment.HTML5_FMT.DATETIME_LOCAL_MS);
-        const leaseendMoment = moment(data.leaseend, moment.HTML5_FMT.DATETIME_LOCAL_MS);
-        data.leasestart = leasestartMoment.format("MMM DD, YYYY");
-        data.leaseend = leaseendMoment.format("MMM DD, YYYY");
-        data.phone = `(${data.phone.substring(0,3)}) ${data.phone.substring(3,6)}-${data.phone.substring(6,10)}`;
+        if (data.leasestart) {
+            const leasestartMoment = moment(data.leasestart, moment.HTML5_FMT.DATETIME_LOCAL_MS);
+            data.leasestart = leasestartMoment.format("MMM DD, YYYY");
+        }
+        if (data.leaseend) {
+            const leaseendMoment = moment(data.leaseend, moment.HTML5_FMT.DATETIME_LOCAL_MS);
+            data.leaseend = leaseendMoment.format("MMM DD, YYYY");
+        }
+        if (data.phone) {
+            data.phone = `(${data.phone.substring(0,3)}) ${data.phone.substring(3,6)}-${data.phone.substring(6,10)}`;
+        }
         res.render("profile", {
             user: data
         });
