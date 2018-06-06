@@ -2,7 +2,6 @@
 var bCrypt = require("bcrypt-nodejs");
 
 module.exports = function(passport, user) {
-  console.log("hi guyys");
 
   var User = user;
 
@@ -73,17 +72,14 @@ passport.deserializeUser(function(id, done) {
 
               lastname: req.body.lastname,
 
-              username: req.body.username,
+              leasestart: req.body.leasestart,
 
               leaseend: req.body.leaseend,
 
               unitnumber: req.body.unitnumber,
 
-              phone: req.body.phone,
+              phone: req.body.phone.replace(/\D/g,'')
 
-              interest: req.body.interest,
-
-              address: req.body.address
             };
 
             User.create(data).then(function(newUser, created) {

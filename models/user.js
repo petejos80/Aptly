@@ -25,7 +25,7 @@ module.exports = function(sequelize, Sequelize) {
             }
         },
 
-        leaseEnd:
+        leaseend:
         {
             type: DataTypes.DATE,
             allowNull: true, 
@@ -33,7 +33,7 @@ module.exports = function(sequelize, Sequelize) {
                 isDate: true
             } 
         },
-        leaseStart:
+        leasestart:
         {
             type: DataTypes.DATE,
             allowNull: true,
