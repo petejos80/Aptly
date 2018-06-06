@@ -1,6 +1,6 @@
 // Routes used too display and save data to the DB
 //Dependencies
-
+var bCrypt = require("bcrypt-nodejs");
 let db = require("../models");
 
 var exports = module.exports = {};
@@ -38,8 +38,7 @@ exports.posts_create = function (req, res) {
         category: req.body.category,
         title: req.body.title,
         body: req.body.body,
-        //Need to remind frontend to make plac for Author
-        author: "Tiesto",
+        userId: req.user.id
     }).then(function (result) {
         res.redirect("/posts");
     })
@@ -51,15 +50,15 @@ exports.users_update = function (req, res) {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            leaseEnd: req.body.leaseEnd,
-            leaseStart: req.body.leaseStart,
-            password: req.body.password,
+            leaseend: req.body.leaseend,
+            leasestart: req.body.leasestart,
+            password: bCrypt.hashSync(req.body.password, bCrypt.genSaltSync(8), null),
             unitnumber: req.body.unitnumber,
             phone: req.body.phone
         },
         {
             where: {
-                id: req.params.id
+                id: req.user.id
             }
         }
     ).then(function (rowsUpdated) {

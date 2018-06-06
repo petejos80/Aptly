@@ -16,29 +16,32 @@
                     <span class="card-title">
                         {{> post-icon}} {{title}}</span>
                     <p class="blue-grey-text">{{updatedAt}}</p>
-                    <p>{{author}}</p>
+                    <p>{{'user.firstname'}} {{'user.lastname'}}</p>
                     <p class="line-clamp-3">{{body}}</p>
                 </div>
                 <div class="card-action white">
                     <a class="modal-trigger" href="#modal-{{id}}">
                         <i class="material-icons">open_in_new</i>
                     </a>
-                    <a href="#" class="favorite-button" data-id={{id}}>
-                        <i class="material-icons">favorite_border</i>
-                    </a>
+                    {{#if isCurrentUser}}
                     <a href="/posts/edit/{{id}}" class="edit-button">
                         <i class="material-icons">edit</i>
                     </a>
                     <a href="#" class="delete-button" data-id={{id}}>
                         <i class="material-icons">delete</i>
                     </a>
+                    {{else }}
+                    <a href="#" class="favorite-button" data-id={{id}}>
+                        <i class="material-icons">favorite_border</i>
+                    </a>
+                    {{/if}}
                 </div>
             </div>
             <div id="modal-{{id}}" class="modal">
                 <div class="modal-content">
                     <h2>{{> post-icon}} {{title}}</h2>
                     <p>{{updatedAt}}</p>
-                    <p>{{author}}</p>
+                    <p>{{'user.firstname'}} {{'user.lastname'}}</p>
                     <p>{{body}}</p>
                 </div>
                 <div class="modal-footer">

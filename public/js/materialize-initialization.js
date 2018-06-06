@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log("here");
     $(".modal").modal();
     $(".dropdown-trigger").dropdown({
         coverTrigger: false,
@@ -9,4 +8,13 @@ $(document).ready(function () {
     });
     $('.tooltipped').tooltip();
     $('.datepicker').datepicker();
+    $('.datepicker').on("focus", function () {
+        const elems = document.querySelectorAll('.datepicker');
+        var instances = M.Datepicker.init(elems);
+        instances.forEach((picker) => {
+            if ($(this).attr("id") === picker.el.id) {
+                picker.open();
+            }
+        })
+    });
 });
