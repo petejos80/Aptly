@@ -1,6 +1,6 @@
 # Aptly
 
-Aptly is a Full-stack Javascript application similar to nextdoor.com but built apartment tenants to connect with other's living in their building.  After creating an account, users are able to add products for sale, and post community-specific events and notifications.
+Aptly is a Full-stack Javascript application similar to nextdoor.com built to connect apartment residents living in the same building.  After creating an account, users are able to add products for sale, and post community-specific events and notifications.
 
 ## Getting Started
 
