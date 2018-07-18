@@ -4,7 +4,7 @@ Aptly is a Full-stack Javascript application similar to nextdoor.com built to co
 
 ## Project Background
 
-This project was built by a team including myself (petejos80) and three other developers.  My core contribution to this prohject was implementing user authentication functionality using Passport.js middleware. 
+This project was built by a team of myself (petejos80) and three other developers.  My core contribution to this prohject was implementing user authentication functionality using Passport.js middleware. 
 
 ## Getting Started
 
