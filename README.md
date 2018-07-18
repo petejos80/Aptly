@@ -2,6 +2,10 @@
 
 Aptly is a Full-stack Javascript application similar to nextdoor.com built to connect apartment residents living in the same building.  After creating an account, users are able to add products for sale, and post community-specific events and notifications.
 
+## Project Background
+
+This project was built by a team including myself (petejos80) and three other developers.  My core contribution to this prohject was implementing user authentication functionality using Passport.js middleware. 
+
 ## Getting Started
 
 * Clone the Github repository to your local machine:
