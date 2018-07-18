@@ -33,6 +33,10 @@ npm install
 
 ![Alt Text](https://media.giphy.com/media/9MIzf9iGO9M4zGwiPj/giphy.gif)
 
-* Posting an item for sale:
+* Post an item for sale:
 
 ![Alt Text](https://media.giphy.com/media/czCcGvExzEMQ9AByoQ/giphy.gif)
+
+* Edit account information:
+
+![Alt Text](https://media.giphy.com/media/9wZIpb2XK9wcszESiI/giphy.gif)
