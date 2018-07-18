@@ -25,6 +25,7 @@ npm install
 * [Passport](http://www.passportjs.org/) - for user auth
 * [BCrypt](https://www.npmjs.com/package/bcrypt) - for password hashing
 * [Sequelize](http://docs.sequelizejs.com/) - for database ORM
+* [Materialize](https://materializecss.com/) - for styling
 
 ## Screenshots
 
