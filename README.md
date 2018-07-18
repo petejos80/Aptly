@@ -28,4 +28,6 @@ npm install
 
 ## Screenshots
 
+* New user registration:
+
 ![Alt Text](https://media.giphy.com/media/9MIzf9iGO9M4zGwiPj/giphy.gif)
