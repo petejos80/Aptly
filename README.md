@@ -28,4 +28,4 @@ npm install
 
 ## Screenshots
 
-![Alt Text](https://giphy.com/gifs/9MIzf9iGO9M4zGwiPj)
+![Alt Text](https://media.giphy.com/media/9MIzf9iGO9M4zGwiPj/giphy.gif)
